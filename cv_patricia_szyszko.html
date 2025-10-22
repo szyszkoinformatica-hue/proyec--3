@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Patricia Szyszko</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 20px;
+            min-height: 100vh;
+        }
+
+        .download-btn {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 50px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 35px rgba(16, 185, 129, 0.6);
+        }
+
+        .download-btn:active {
+            transform: translateY(-1px);
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 25px 70px rgba(0,0,0,0.4);
+            animation: slideDown 1s ease-out;
+        }
+
+        @keyframes slideDown {
+            from {
+                opacity: 0;
+                transform: translateY(-50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .header {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #334155 100%);
+            color: white;
+            padding: 50px;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .header::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            right: -100px;
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(102, 126, 234, 0.3) 0%, transparent 70%);
+            animation: float 6s ease-in-out infinite;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(30px, -30px) scale(1.1); }
+        }
+
+        .photo-container {
+            position: relative;
+            z-index: 1;
+            flex-shrink: 0;
+        }
+
+        .profile-photo {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            border: 5px solid white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            object-fit: cover;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 60px;
+            color: white;
+        }
+
+        .header-content {
+            position: relative;
+            z-index: 1;
+            flex: 1;
+        }
+
+        h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-weight: 800;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+
+        .title {
+            font-size: 1.3em;
+            color: #a78bfa;
+            margin-bottom: 25px;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 15px;
+        }
+
+        .contact-card {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 12px 18px;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .contact-card:hover {
+            background: rgba(255, 255, 255, 0.15);
+            transform: translateY(-2px);
+        }
+
+        .contact-icon {
+            width: 35px;
+            height: 35px;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1em;
+            flex-shrink: 0;
+        }
+
+        .main-content {
+            padding: 50px;
+            background: linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%);
+        }
+
+        .section {
+            margin-bottom: 40px;
+            animation: fadeInUp 0.8s ease-out;
+            animation-fill-mode: both;
+        }
+
+        .section:nth-child(1) { animation-delay: 0.1s; }
+        .section:nth-child(2) { animation-delay: 0.2s; }
+        .section:nth-child(3) { animation-delay: 0.3s; }
+        .section:nth-child(4) { animation-delay: 0.4s; }
+        .section:nth-child(5) { animation-delay: 0.5s; }
+        .section:nth-child(6) { animation-delay: 0.6s; }
+        .section:nth-child(7) { animation-delay: 0.7s; }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .section-title {
+            font-size: 1.8em;
+            color: #0f172a;
+            margin-bottom: 25px;
+            padding-bottom: 12px;
+            border-bottom: 4px solid transparent;
+            border-image: linear-gradient(90deg, #667eea, #764ba2);
+            border-image-slice: 1;
+            display: inline-block;
+            font-weight: 700;
+            position: relative;
+        }
+
+        .section-title::before {
+            content: '▸';
+            position: absolute;
+            left: -25px;
+            color: #667eea;
+            font-size: 1.2em;
+            opacity: 0;
+            transition: all 0.3s ease;
+        }
+
+        .section:hover .section-title::before {
+            opacity: 1;
+            left: -30px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            margin-bottom: 20px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            border-left: 5px solid #667eea;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(102, 126, 234, 0.1), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .card:hover::before {
+            left: 100%;
+        }
+
+        .card:hover {
+            transform: translateX(15px) scale(1.02);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.25);
+            border-left-color: #764ba2;
+        }
+
+        .card-title {
+            font-size: 1.3em;
+            color: #0f172a;
+            font-weight: 700;
+            margin-bottom: 8px;
+        }
+
+        .card-subtitle {
+            color: #667eea;
+            font-weight: 600;
+            margin-bottom: 12px;
+            font-size: 1.05em;
+        }
+
+        .card-text {
+            color: #475569;
+            line-height: 1.7;
+            font-size: 0.98em;
+        }
+
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .skill-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.05em;
+            transition: all 0.4s ease;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .skill-card::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            width: 0;
+            height: 0;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            transform: translate(-50%, -50%);
+            transition: width 0.6s ease, height 0.6s ease;
+        }
+
+        .skill-card:hover::before {
+            width: 300px;
+            height: 300px;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-10px) rotate(2deg);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.5);
+        }
+
+        .skill-text {
+            position: relative;
+            z-index: 1;
+        }
+
+        .languages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .language-badge {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            color: #0f172a;
+            padding: 18px 25px;
+            border-radius: 50px;
+            font-weight: 600;
+            border: 3px solid #667eea;
+            transition: all 0.3s ease;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        .language-badge:hover {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            transform: scale(1.1) rotate(-2deg);
+            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.4);
+        }
+
+        .availability-section {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 35px;
+            border-radius: 20px;
+            margin-top: 20px;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.3);
+        }
+
+        .availability-grid {
+            display: grid;
+            gap: 18px;
+            margin-top: 20px;
+        }
+
+        .availability-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            background: rgba(255, 255, 255, 0.15);
+            padding: 18px 25px;
+            border-radius: 12px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .availability-item:hover {
+            background: rgba(255, 255, 255, 0.25);
+            transform: translateX(10px);
+        }
+
+        .check-icon {
+            width: 35px;
+            height: 35px;
+            background: white;
+            color: #059669;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.2em;
+            flex-shrink: 0;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+
+        .hobbies-section {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            padding: 30px;
+            border-radius: 20px;
+            border: 3px solid #f59e0b;
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.2);
+        }
+
+        .hobby-content {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 1.1em;
+            color: #78350f;
+            font-weight: 600;
+        }
+
+        .hobby-icon {
+            font-size: 3em;
+            animation: bounce 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        @media (max-width: 768px) {
+            .header {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px 20px;
+            }
+
+            h1 {
+                font-size: 2em;
+            }
+            
+            .title {
+                font-size: 1.1em;
+            }
+
+            .download-btn {
+                top: 10px;
+                right: 10px;
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+            
+            .main-content {
+                padding: 30px 20px;
+            }
+            
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .skills-container,
+            .languages-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-photo {
+                width: 150px;
+                height: 150px;
+                font-size: 50px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <button class="download-btn" onclick="downloadPDF()">
+        <span>📥</span>
+        <span>Descargar PDF</span>
+    </button>
+
+    <div class="container" id="cv-content">
+        <div class="header">
+            <div class="photo-container">
+                <div class="profile-photo" id="profile-photo">
+                    👤
+                </div>
+            </div>
+            <div class="header-content">
+                <h1>Patricia Szyszko</h1>
+                <div class="title">Mandataria Nacional del Automotor y Créditos Prendarios</div>
+                
+                <div class="contact-grid">
+                    <div class="contact-card">
+                        <div class="contact-icon">📍</div>
+                        <div>
+                            <small><strong>Domicilio</strong></small><br>
+                            3 de Febrero 2040, Posadas, Misiones (CP 3300)
+                        </div>
+                    </div>
+                    <div class="contact-card">
+                        <div class="contact-icon">📱</div>
+                        <div>
+                            <small><strong>Celular</strong></small><br>
+                            +54 3755 061 7471
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="main-content">
+            <div class="section">
+                <h2 class="section-title">Experiencia Profesional</h2>
+                
+                <div class="card">
+                    <div class="card-title">Mandataria Nacional del Automotor y Créditos Prendarios</div>
+                    <div class="card-subtitle">Registro Nacional de la Propiedad Automotor</div>
+                    <div class="card-text">Especialista en tramitaciones del automotor con amplio conocimiento en normativas vigentes del DNRPA. Gestión integral de transferencias vehiculares, inscripciones iniciales, cambios registrales y créditos prendarios.</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">Docente Especializada</div>
+                    <div class="card-subtitle">Cámara de Mandatarios</div>
+                    <div class="card-text">Capacitadora en materias específicas del mandato automotor. Transmisión de conocimientos sobre procedimientos registrales, actualización normativa y mejores prácticas profesionales.</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">Tesorera</div>
+                    <div class="card-subtitle">Coca-Cola</div>
+                    <div class="card-text">Responsable de la gestión financiera y administrativa. Control de tesorería, manejo de fondos, conciliaciones bancarias y reportes financieros.</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">Cajera Central</div>
+                    <div class="card-subtitle">TIA S.A.</div>
+                    <div class="card-text">Supervisión de operaciones de caja, manejo de efectivo, cierre de turnos, arqueos y atención directa al público con excelencia en servicio al cliente.</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Formación Académica</h2>
+                
+                <div class="card">
+                    <div class="card-title">Perito Mercantil</div>
+                    <div class="card-text">Título secundario con orientación comercial y contable. Base sólida en administración, contabilidad y gestión empresarial.</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">Mandataria Nacional</div>
+                    <div class="card-text">Título profesional habilitante para ejercer como mandataria del automotor. Certificación oficial que acredita conocimientos en normativa registral automotor.</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">Facultad de Derecho - UNNE</div>
+                    <div class="card-subtitle">Universidad Nacional del Nordeste</div>
+                    <div class="card-text">Estudios universitarios en Ciencias Jurídicas - Programa AMPAS.</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">Productor de Seguros</div>
+                    <div class="card-text">Curso completo y certificado como productor de seguros. Capacitación integral en productos aseguradores y asesoramiento técnico.</div>
+                </div>
+
+                <div class="card">
+                    <div class="card-title">Tecnicatura en Seguros - ALFA</div>
+                    <div class="card-text">Primer año completado de la carrera técnica superior en seguros.</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Capacitación Continua</h2>
+                
+                <div class="card">
+                    <div class="card-title">Capacitaciones DNRPA</div>
+                    <div class="card-subtitle">Dirección Nacional de los Registros Nacionales de la Propiedad del Automotor</div>
+                    <div class="card-text">Actualización profesional permanente mediante cursos y seminarios del organismo oficial. Conocimiento actualizado de normativas y sistemas digitales.</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Habilidades Profesionales</h2>
+                <div class="skills-container">
+                    <div class="skill-card">
+                        <div class="skill-text">Resolución Efectiva de Problemas</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-text">Gestión Administrativa</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-text">Normativa DNRPA</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-text">Atención al Cliente</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-text">Gestión Financiera</div>
+                    </div>
+                    <div class="skill-card">
+                        <div class="skill-text">Capacitación y Docencia</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Competencias Lingüísticas</h2>
+                <div class="languages-grid">
+                    <div class="language-badge">🇦🇷 Español - Nativo</div>
+                    <div class="language-badge">🇺🇦 Ucraniano - Fluido</div>
+                    <div class="language-badge">🇧🇾 Bielorruso - Fluido</div>
+                    <div class="language-badge">🇧🇷 Portugués - Básico</div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Disponibilidad y Movilidad</h2>
+                <div class="availability-section">
+                    <div class="availability-grid">
+                        <div class="availability-item">
+                            <div class="check-icon">✓</div>
+                            <div>
+                                <strong>Disponibilidad Horaria:</strong> Full Time<br>
+                                <small>Flexibilidad total para jornada completa</small>
+                            </div>
+                        </div>
+                        <div class="availability-item">
+                            <div class="check-icon">✓</div>
+                            <div>
+                                <strong>Movilidad Propia:</strong> Vehículo y Licencia Habilitada<br>
+                                <small>Autonomía para desplazamientos laborales</small>
+                            </div>
+                        </div>
+                        <div class="availability-item">
+                            <div class="check-icon">✓</div>
+                            <div>
+                                <strong>Disponibilidad de Radicación:</strong> Abierta a Reubicación<br>
+                                <small>Disposición para mudanza según necesidades</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2 class="section-title">Intereses Personales</h2>
+                <div class="hobbies-section">
+                    <div class="hobby-content">
+                        <div class="hobby-icon">🗳️</div>
+                        <div>
+                            <strong>Actividad Política</strong><br>
+                            Participación activa en espacios de construcción ciudadana y compromiso social con la comunidad.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Función para cargar la imagen desde GitHub
+        function loadProfileImage() {
+            const photoElement = document.getElementById('profile-photo');
+            // Ruta relativa donde estará la foto en el repositorio
+            const imagePath = './assets/foto-perfil.jpg';
+            
+            const img = document.createElement('img');
+            img.src = imagePath;
+            img.className = 'profile-photo';
+            img.style.width = '180px';
+            img.style.height = '180px';
+            img.style.borderRadius = '50%';
+            img.style.objectFit = 'cover';
+            img.alt = 'Patricia Szyszko';
+            
+            img.onerror = function() {
+                console.log('No se pudo cargar la imagen, usando ícono por defecto');
+            };
+            
+            img.onload = function() {
+                photoElement.innerHTML = '';
+                photoElement.appendChild(img);
+            };
+        }
+
+        // Cargar imagen al iniciar
+        loadProfileImage();
+
+        // Función para descargar como PDF
+        function downloadPDF() {
+            // Ruta del PDF en GitHub
+            const pdfPath = './assets/CV-Patricia-Szyszko.pdf';
+            
+            const link = document.createElement('a');
+            link.href = pdfPath;
+            link.download = 'CV-Patricia-Szyszko.pdf';
+            link.target = '_blank';
+            
+            // Intenta descargar, si falla abre en nueva pestaña
+            link.click();
+            
+            // Mensaje alternativo si no hay PDF
+            setTimeout(() => {
+                console.log('Si el PDF no se descarga, asegúrate de tener el archivo en la carpeta assets/');
+            }, 1000);
+        }
+    </script>
+</body>
+</html>
